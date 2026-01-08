@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Well-Being Self-Check</title>
+    <meta name="description"
+        content="A supportive tool for self-reflection on your mental well-being. Track your mood, energy, stress, sleep, and motivation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Background gradient -->
+    <div class="background-gradient"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <div class="card glass-card welcome-card">
+                <div class="card-header">
+                    <h1 class="gradient-text">Mental Well-Being Self-Check</h1>
+                    <p class="subtitle">A moment to reflect on how you're feeling</p>
+                </div>
+
+                <div class="card-body">
+                    <div class="info-section">
+                        <div class="info-item">
+                            <span class="emoji">🌟</span>
+                            <p>Answer 5 simple questions about your current state</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="emoji">💡</span>
+                            <p>Receive personalized supportive advice</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="emoji">🔒</span>
+                            <p>Your session is private and temporary (expires in 30 min)</p>
+                        </div>
+                    </div>
+
+                    <div class="disclaimer">
+                        <div class="disclaimer-icon">⚠️</div>
+                        <div class="disclaimer-content">
+                            <strong>Important Disclaimer</strong>
+                            <p>This tool is for self-reflection only. It is not a medical diagnosis or professional
+                                mental health assessment. If you're experiencing serious mental health concerns, please
+                                consult a qualified healthcare professional.</p>
+                        </div>
+                    </div>
+
+                    <button id="start-btn" class="btn btn-primary">
+                        <span>Start Self-Check</span>
+                        <span class="btn-icon">→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Questionnaire Screen -->
+        <div id="questionnaire-screen" class="screen">
+            <div class="card glass-card questionnaire-card">
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <div class="progress-bar">
+                            <div id="progress-fill" class="progress-fill"></div>
+                        </div>
+                        <div class="running-score" id="running-score-container">
+                            <span class="label">Current Score:</span>
+                            <span id="running-score-value" class="value">0</span>
+                        </div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="progress-current">0</span> / <span id="progress-total">5</span>
+                    </div>
+                </div>
+
+                <!-- Question Container -->
+                <div id="question-container" class="question-container">
+                    <!-- Questions will be dynamically inserted here -->
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="button-group">
+                    <button id="prev-btn" class="btn btn-secondary" style="display: none;">
+                        <span class="btn-icon">←</span>
+                        <span>Previous</span>
+                    </button>
+                    <button id="next-btn" class="btn btn-primary" disabled>
+                        <span>Next</span>
+                        <span class="btn-icon">→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="card glass-card results-card">
+                <div class="results-header">
+                    <h2 id="results-title" class="gradient-text">Your Results</h2>
+                    <div id="score-display" class="score-display">
+                        <div class="score-circle">
+                            <span id="score-value" class="score-value">0</span>
+                            <span class="score-max">/ 25</span>
+                        </div>
+                        <p id="score-category" class="score-category"></p>
+                    </div>
+                </div>
+
+                <div id="advice-container" class="advice-container">
+                    <!-- Advice will be dynamically inserted here -->
+                </div>
+
+                <div class="button-group">
+                    <button id="restart-btn" class="btn btn-primary">
+                        <span class="btn-icon">↻</span>
+                        <span>Start New Check</span>
+                    </button>
+                    <button id="stats-btn" class="btn btn-secondary">
+                        <span>View Statistics</span>
+                        <span class="btn-icon">📊</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Screen -->
+        <div id="stats-screen" class="screen">
+            <div class="card glass-card stats-card">
+                <div class="card-header">
+                    <h2 class="gradient-text">Anonymous Statistics</h2>
+                    <p class="subtitle">Aggregated data from all users</p>
+                </div>
+
+                <div id="stats-container" class="stats-container">
+                    <!-- Statistics will be dynamically inserted here -->
+                </div>
+
+                <button id="back-to-results-btn" class="btn btn-secondary">
+                    <span class="btn-icon">←</span>
+                    <span>Back to Results</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

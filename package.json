@@ -1,0 +1,19 @@
+{
+  "name": "sqlpsy-wellbeing-app",
+  "version": "1.0.0",
+  "description": "Mental well-being self-check web app using Redis and Express",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js"
+  },
+  "keywords": ["mental-health", "wellbeing", "redis", "express", "self-assessment"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "redis": "^4.6.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  }
+}
