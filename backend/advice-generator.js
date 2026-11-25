@@ -7,6 +7,7 @@ const { getScoreCategory } = require('./questions');
 
 // Main advice messages based on score category
 const categoryAdvice = {
+    //Premier scenario
     low: {
         title: 'We hear you <i class="fas fa-heart" style="color: #667eea;"></i>',
         message: 'It looks like you might be going through a challenging time right now. That\'s okay - everyone experiences difficult periods. Remember that reaching out for support is a sign of strength, not weakness.',
